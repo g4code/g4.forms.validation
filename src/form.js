@@ -107,7 +107,7 @@
 
 
     if (typeof define != 'undefined' && define.hasOwnProperty('amd') && define.amd) { // RequireJS AMD
-        define(["G4/filter", "G4/validator", "G4/error"], function(filter, validator, error){
+        define(["./filter", "./validator", "./error"], function(filter, validator, error){
             FormAbstract.prototype.filterInstace = new filter();
             FormAbstract.prototype.errorInstace = new error();
             FormAbstract.prototype.validatorInstace = new validator();
