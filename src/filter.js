@@ -4,9 +4,23 @@
 
     filter.prototype = {
 
+        allowOnlyNumbers: function(event)
+        {
+            event.target.value = event.target.value.replace(/[^\dA-Z]/g, '');
+        },
+
+        formatCardNumber:  function (event) {
+            event.target.value = event.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+        },
+
         trim: function(field)
         {
             return field.val($.trim(field.val()));
+        },
+
+        removeSpaces: function(value)
+        {
+            return value.replace(/\s+/g, '')
         }
 
     };

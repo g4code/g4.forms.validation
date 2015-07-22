@@ -60,6 +60,11 @@
             return value.search(regularExpression) != -1 ||
                 /^(_)\1/.test(value) ||
                 /^(-)\1/.test(value);
+        },
+
+        startWithDigit: function(value)
+        {
+            return /^\d/.test(value);;
         }
 
     }
