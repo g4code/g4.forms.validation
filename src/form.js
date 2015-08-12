@@ -53,6 +53,7 @@
         init: function()
         {
             this.detachEvents().attachEvents();
+            new this.validationEvents(this);
         },
 
         onSubmit: function(event)
@@ -102,15 +103,15 @@
                 $.each(this.fields[oneField.name], $.proxy(this.executeOneRule, this, oneField));
             }
         }
-
     };
 
 
     if (typeof define != 'undefined' && define.hasOwnProperty('amd') && define.amd) { // RequireJS AMD
-        define(["./filter", "./validator", "./error"], function(filter, validator, error){
+        define(["./filter", "./validator", "./error", "./validation-events"], function(filter, validator, error, validationEvents){
             FormAbstract.prototype.filterInstace = new filter();
             FormAbstract.prototype.errorInstace = new error();
             FormAbstract.prototype.validatorInstace = new validator();
+            FormAbstract.prototype.validationEvents = validationEvents;
             return FormAbstract;
         });
     } else if (typeof window != 'undefined') { // Fall back to attaching to window
@@ -119,6 +120,7 @@
         FormAbstract.prototype.filterInstace = new G4.form.filter();
         FormAbstract.prototype.errorInstace = new G4.form.error();
         FormAbstract.prototype.validatorInstace = new G4.form.validator();
+        FormAbstract.prototype.validationEvents = G4.form.validationEvents;
         window.G4.form = FormAbstract;
     };
 
