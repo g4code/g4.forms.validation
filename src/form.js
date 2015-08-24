@@ -59,6 +59,7 @@
         onSubmit: function(event)
         {
             event.preventDefault();
+            $(this.formSelector).removeClass('form_has_error');
             this.validateFields();
             if(!this.hasErrors){
                 try {
@@ -70,6 +71,8 @@
                 } catch(err) {
                     console.log('ERROR ' + err);
                 }
+            }else{
+                $(this.formSelector).addClass('form_has_error');
             }
         },
 
