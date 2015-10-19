@@ -4,13 +4,27 @@
 
     error.prototype = {
 
-        addError: function(field, message){
+        addError: function(field, message)
+        {
             $(field).parent().find('.js_form_error').remove();
+            $(field).parent().addClass('js_has_error').addClass('has_error');
             $(field).before('<span class="js_form_error error_message">'+message+'</span>' );
         },
 
-        removeError: function(field){
+        removeAllError: function(scope)
+        {
+            $(".js_form_error").remove();
+        },
+
+        removeError: function(field)
+        {
             field.parent().find('.js_form_error').remove();
+            field.parent().removeClass('js_has_error').removeClass('has_error');
+        },
+
+        onClickRemoveErrors: function(scope)
+        {
+            $('body').off('click').on('click', $.proxy(this.removeAllError, this, scope));
         }
 
     };
