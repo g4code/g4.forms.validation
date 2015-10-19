@@ -11,9 +11,14 @@
             $(field).before('<span class="js_form_error error_message">'+message+'</span>' );
         },
 
-        removeAllError: function(scope)
+        removeErrorMsg: function(event)
         {
-            $(".js_form_error").remove();
+            $(event.currentTarget).remove();
+        },
+
+        removeParrentErrorMsg: function(event)
+        {
+            $(event.currentTarget).parent().find('.js_form_error').remove();
         },
 
         removeError: function(field)
@@ -24,7 +29,8 @@
 
         onClickRemoveErrors: function(scope)
         {
-            $('body').off('click').on('click', $.proxy(this.removeAllError, this, scope));
+            $('body').off('click',scope.formSelector + ' .js_form_error').on('click',scope.formSelector + ' .js_form_error', $.proxy(this.removeErrorMsg, this));
+            $('body').off('focus',scope.formSelector + ' input').on('click', scope.formSelector + ' input', $.proxy(this.removeParrentErrorMsg, this));
         }
 
     };
