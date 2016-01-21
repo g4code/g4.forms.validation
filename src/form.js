@@ -9,6 +9,7 @@
         attachEvents: function()
         {
             $('body').on('submit', this.formSelector, $.proxy(this.onSubmit, this));
+            $(this.formSelector + " input, "+this.formSelector+" select").focusin($.proxy(this.onFocus, this)).focusout($.proxy(this.onFocusOut, this));
             return this;
         },
 
@@ -74,6 +75,16 @@
             }else{
                 $(this.formSelector).addClass('form_has_error');
             }
+        },
+
+        onFocus: function(event){
+            $(event.currentTarget).closest('.form_field_wrapper').find('label').addClass('is_used');
+        },
+
+        onFocusOut: function(event){
+            $(event.currentTarget).val().length > 0
+                ? $(event.currentTarget).closest('.form_field_wrapper').find('label').addClass('is_used')
+                : $(event.currentTarget).closest('.form_field_wrapper').find('label').removeClass('is_used');
         },
 
         submitStart: function()
