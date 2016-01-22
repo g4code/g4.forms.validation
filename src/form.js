@@ -9,7 +9,8 @@
         attachEvents: function()
         {
             $('body').on('submit', this.formSelector, $.proxy(this.onSubmit, this));
-            $(this.formSelector + " input, "+this.formSelector+" select").focusin($.proxy(this.onFocus, this)).focusout($.proxy(this.onFocusOut, this));
+            $('body').on('focusin', this.formSelector + " input, "+this.formSelector+" select", $.proxy(this.onFocus, this));
+            $('body').on('focusout', this.formSelector + " input, "+this.formSelector+" select", $.proxy(this.onFocusOut, this));
             return this;
         },
 
