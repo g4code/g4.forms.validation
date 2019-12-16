@@ -91,7 +91,6 @@
         submitStart: function()
         {
             $(".js_loader").removeClass("hidden");
-            $("input[type=submit]",this.formSelector).hide();
         },
 
         submitEnd: function()
