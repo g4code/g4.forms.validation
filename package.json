@@ -1,6 +1,6 @@
 {
   "name": "g4.forms.validation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Forms validation",
   "main": "index.js",
   "scripts": {
