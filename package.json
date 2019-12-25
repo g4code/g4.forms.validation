@@ -1,6 +1,6 @@
 {
   "name": "g4code.es5.forms.validation",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Forms validation, old style",
   "main": "index.js",
   "scripts": {
