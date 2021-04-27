@@ -56,10 +56,11 @@
 
         username: function(value)
         {
-            var regularExpression = /[\~\!\@\#\$\%\&\*\(\)\{\}\[\]\\\|\/\?\>\<]/;
+            var regularExpression = /[\~\!\@\#\$\%\&\*\(\)\{\}\[\]\\\|\/\?\>\<\:\;\=\€\÷\×\¤\ß\§]/;
             return value.search(regularExpression) != -1 ||
-                /^(_)\1/.test(value) ||
-                /^(-)\1/.test(value);
+                /^(_)/.test(value) ||
+                /^(-)/.test(value) ||
+                /^[.]/.test(value);
         },
 
         startWithDigit: function(value)
