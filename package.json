@@ -1,7 +1,7 @@
 {
-  "name": "g4.forms.validation",
-  "version": "1.0.1",
-  "description": "Forms validation",
+  "name": "g4code.es5.forms.validation",
+  "version": "1.0.3",
+  "description": "Forms validation, old style",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,12 +11,12 @@
     "url": "git+https://github.com/g4code/g4.forms.validation.git"
   },
   "keywords": [
-    "g4.forms.validation"
+    "g4code.es5.forms.validation"
   ],
   "author": "G4 Code <office@g4code.com>",
   "maintainers": [
-    "Drasko Gomboc <drasko.gomboc@gmail.com>",
-    "Zeljko Simic <zeljkosbgd@gmail.com>"
+    "Dejan Samardzija <dejan.samardzija@codeplicity.com>",
+    "Jovan Ivezic <jovan.ivezic@codeplicity.com>"
   ],
   "license": "MIT",
   "bugs": {
