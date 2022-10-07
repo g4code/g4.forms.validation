@@ -56,7 +56,7 @@
 
         username: function(value)
         {
-            var regularExpression = /[\~\!\@\#\$\%\&\*\(\)\{\}\[\]\\\|\/\?\>\<\:\;\=\€\÷\×\¤\ß\§]/;
+            var regularExpression = /[\~\!\@\#\$\%\&\*\(\)\{\}\[\]\\\|\/\?\>\<\:\;\=\€\÷\×\¤\ß\§\+\,]/;
             return value.search(regularExpression) != -1 ||
                 /^(_)/.test(value) ||
                 /^(-)/.test(value) ||
